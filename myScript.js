@@ -9,7 +9,7 @@ var kmPercorso = parseInt(prompt("quanti km vuole percorrere?"));
 // isNaN restituisce false --> eta è un numero  
 if (Number.isNaN(eta)) {
     console.log("inserire dei numeri");
-    
+
 } else {
     // calcolo per i prezzi 0.21€/km
     var prezzo = kmPercorso * 0.21;
@@ -36,6 +36,7 @@ if (Number.isNaN(eta)) {
     }
     
     // output del programma
+    // to.Fixed(2) tronca l'output alla seconda cifra decimale 
     console.log("il prezzo scontato è di: " + prezzoScontato.toFixed(2));
 }
 
