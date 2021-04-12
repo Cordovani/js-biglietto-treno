@@ -1,31 +1,37 @@
 
-    // chiediamo i dati all'utente e li salviamo nelle variabili 
-    
-    var età = prompt("quanti anni ha?");
-    var kmPercorso = prompt("quanti km vuole percorrere");
+// chiediamo i dati all'utente e li salviamo nelle variabili 
+var eta = parseInt(prompt("quanti anni ha?"));
+var kmPercorso = parseInt(prompt("quanti km vuole percorrere?"));
 
-    // controllo dell'input 
-    
+// controllo dell'input     
+if (eta) {
 
-    // calcolo per i prezzi 0.21€/km
-    var prezzo = kmPercorso  * 0.21;
+}
 
-    console.log(prezzo);
+// calcolo per i prezzi 0.21€/km
+var prezzo = kmPercorso * 0.21;
 
-    // applica uno sconto in base all'età dell'utente
-    // 40% per i minorenni. 
-    // 20% per gli over 65.
+console.log(prezzo);
 
-    var prezzoScontato = 0;  
+// applica uno sconto in base all'età dell'utente
+// 40% per i minorenni. 
+// 20% per gli over 65.
+// calcolo dello sconto con y = x - (x * %)
 
-    if ( età >= 18 && età <= 65 ){
-        prezzoScontato = prezzo;
-    } else if (età < 18){
-        // sconto del 40%
-    } else if (età > 65){
-        // sconto del 20%
-    }
-    
+var prezzoScontato = 0;
 
-    // output del programma
+// if ( età >= 18 && età <= 65 ){ (superfluo)
+//     prezzoScontato = prezzo;
+if (eta < 18) {
+    // sconto del 40%
+    prezzoScontato = prezzo - (prezzo * 40 / 100);
+} else if (eta > 65) {
+    // sconto del 20%
+    prezzoScontato = prezzo - (prezzo * 20 / 100);
+} else {
+    prezzoScontato = prezzo;
+}
 
+
+// output del programma
+console.log("il prezzo scontato è di: " + prezzoScontato.toFixed(2));
